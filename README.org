@@ -1,0 +1,14 @@
+#+STARTUP: showall indent
+
+* mozc_emacs_helper
+
+Windows の「Google 日本語入力」と連係可能な mozc_emacs_helper.exe です。
+
+詳しくは以下を参照してください。
+
+- [[https://www49.atwiki.jp/ntemacs/pages/50.html][emacs-mozc を動かすための設定（mozc_emacs_helper コンパイル編）]]
+
+Windows の emacs で利用する以外に Bash on Ubuntu on Windwos からも利用可能です。
+
+- [[https://www49.atwiki.jp/ntemacs/pages/48.html][emacs-mozc を動かすための設定（emacs 設定編）]]
+- [[https://www49.atwiki.jp/ntemacs/pages/61.html][emacs-mozc を動かすための設定（BUW 設定編）]]
