@@ -1,6 +1,6 @@
 #+STARTUP: showall indent
 
-* mozc_emacs_helper
+* mozc_emacs_helper for Windows
 
 Windows の「Google 日本語入力」と連係可能な mozc_emacs_helper.exe です。
 
