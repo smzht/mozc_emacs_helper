@@ -4,9 +4,9 @@
 
 Windows の「Google 日本語入力」と連携可能な mozc_emacs_helper.exe です。
 
-利用するための設定は以下を参照してください。Windows の emacs で利用する以外に Windows Subsystem for Linux の emacs からも利用可能です。
+利用するための設定は以下を参照してください。Windows の Emacs で利用する以外に Windows Subsystem for Linux の Emacs からも利用可能です。
 
-- [[https://www49.atwiki.jp/ntemacs/pages/48.html][emacs-mozc を動かすための設定（emacs 設定編）]]
+- [[https://www49.atwiki.jp/ntemacs/pages/48.html][emacs-mozc を動かすための設定（Emacs 設定編）]]
 - [[https://www49.atwiki.jp/ntemacs/pages/61.html][emacs-mozc を動かすための設定（WSL 設定編）]]
 
 また、mozc_emacs_helper.exe をコンパイルしたときの情報は以下にまとめてあります。但し、既に古い情報となっています。
