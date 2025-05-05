@@ -1,0 +1,54 @@
+diff -urN src.orig/build_mozc.py src/build_mozc.py
+--- src.orig/build_mozc.py	2025-05-05 16:28:49.869697500 +0900
++++ src/build_mozc.py	2025-05-05 11:24:55.000000000 +0900
+@@ -296,10 +296,10 @@
+     targets = [OSS_SRC_DIR + '/mac/mac.gyp:codesign_DiskImage']
+   elif target_platform == 'Windows':
+     targets = [
+-        'out_win/%s:mozc_win32_build32' % config,
+-        'out_win/%sDynamic_x64:mozc_win32_build64_dynamic' % config,
++        # 'out_win/%s:mozc_win32_build32' % config,
++        # 'out_win/%sDynamic_x64:mozc_win32_build64_dynamic' % config,
+         'out_win/%s_x64:mozc_win32_build64' % config,
+-        'out_win/%s:mozc_installers_win' % config,
++        # 'out_win/%s:mozc_installers_win' % config,
+     ]
+   else:
+     raise ValueError('unrecognized platform: %s' % target_platform)
+diff -urN src.orig/unix/emacs/mozc_emacs_helper.cc src/unix/emacs/mozc_emacs_helper.cc
+--- src.orig/unix/emacs/mozc_emacs_helper.cc	2025-05-05 16:28:53.077292700 +0900
++++ src/unix/emacs/mozc_emacs_helper.cc	2025-05-05 13:31:50.000000000 +0900
+@@ -92,6 +92,18 @@
+     switch (command.input().type()) {
+       case commands::Input::CREATE_SESSION:
+         session_id = client_pool.CreateClient();
++#ifdef GOOGLE_JAPANESE_INPUT_BUILD
++        {
++          std::shared_ptr<mozc::client::Client> client =
++            client_pool.GetClient(session_id);
++          CHECK(client.get());
++          mozc::commands::KeyEvent key;
++          key.set_special_key(mozc::commands::KeyEvent::ON);
++          if (!client->SendKey(key, command.mutable_output())) {
++            ErrorExit(mozc::emacs::kErrSessionError, "Send IME-On key failed");
++          }
++        }
++#endif
+         break;
+       case commands::Input::DELETE_SESSION:
+         client_pool.DeleteClient(session_id);
+diff -urN src.orig/win32/build64/build64.gyp src/win32/build64/build64.gyp
+--- src.orig/win32/build64/build64.gyp	2025-05-05 16:28:53.232517100 +0900
++++ src/win32/build64/build64.gyp	2025-05-05 09:45:28.000000000 +0900
+@@ -43,8 +43,9 @@
+           'target_name': 'mozc_win32_build64',
+           'type': 'none',
+           'dependencies': [
+-            '../custom_action/custom_action.gyp:mozc_custom_action',
+-            '../tip/tip.gyp:mozc_tip64',
++            # '../custom_action/custom_action.gyp:mozc_custom_action',
++            # '../tip/tip.gyp:mozc_tip64',
++            '../../unix/emacs/emacs.gyp:mozc_emacs_helper',
+           ],
+         },
+       ],

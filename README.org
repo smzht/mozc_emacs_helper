@@ -12,4 +12,3 @@ Windows の「Google 日本語入力」と連携可能な mozc_emacs_helper.exe 
 また、mozc_emacs_helper.exe をコンパイルしたときの情報は以下にまとめてあります。但し、既に古い情報となっています。
 
 - [[https://www49.atwiki.jp/ntemacs/pages/50.html][emacs-mozc を動かすための設定（mozc_emacs_helper コンパイル編）]]
-

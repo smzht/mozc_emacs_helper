@@ -1,0 +1,27 @@
+diff -urN src.orig/data_manager/packed/packed_data_manager.gyp src/data_manager/packed/packed_data_manager.gyp
+--- src.orig/data_manager/packed/packed_data_manager.gyp	2014-11-17 19:23:22.000000000 +0900
++++ src/data_manager/packed/packed_data_manager.gyp	2014-11-17 20:02:09.379555300 +0900
+@@ -47,5 +47,12 @@
+       },
+       'includes': [ 'packed_data_manager.gypi' ],
+     }],
++    ['branding=="GoogleJapaneseInput"', {
++      'variables': {
++        'dataset_dir': 'oss',
++        'dataset_tag': 'oss',
++      },
++      'includes': [ 'packed_data_manager.gypi' ],
++    }],
+   ],
+ }
+diff -urN src.orig/win32/build32/build32.gyp src/win32/build32/build32.gyp
+--- src.orig/win32/build32/build32.gyp	2014-11-17 19:25:33.000000000 +0900
++++ src/win32/build32/build32.gyp	2014-11-17 20:02:52.369617200 +0900
+@@ -49,6 +49,7 @@
+             '../broker/broker.gyp:mozc_broker32',
+             '../ime/ime.gyp:mozc_ime',
+             '../tip/tip.gyp:mozc_tip32',
++            '../../unix/emacs/emacs.gyp:mozc_emacs_helper',
+           ],
+           'conditions': [
+             ['use_dynamically_linked_qt!=1', {
