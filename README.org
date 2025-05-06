@@ -12,8 +12,12 @@ Windows の「Google 日本語入力」と連携可能な mozc_emacs_helper.exe 
 
 - [[https://www49.atwiki.jp/ntemacs/pages/61.html][emacs-mozc を動かすための設定（WSL 設定編）]]
 
-また、mozc_emacs_helper.exe をコンパイルしたときの情報は以下にまとめてあります。但し、既に古い情報となっています。
+また、mozc_emacs_helper.exe を build したときの情報は以下にまとめてあります。
+
+＜古いバージョン（ver_2.31.5810.100）を build した際の情報＞
 
 - [[https://www49.atwiki.jp/ntemacs/pages/50.html][emacs-mozc を動かすための設定（mozc_emacs_helper コンパイル編）]]
 
-※ ver_2.31.5810.100 の mozc_emacs_helper.exe のコンパイル方法はこれからまとめます。
+＜新しいバージョン（ver_2.31.5810.100）を build した際の情報＞
+
+- [[https://www49.atwiki.jp/ntemacs/pages/93.html][emacs-mozc を動かすための設定（mozc_emacs_helper コンパイル編（その２））]]
