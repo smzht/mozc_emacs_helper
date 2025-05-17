@@ -22,7 +22,7 @@ diff -urN src.orig/unix/emacs/mozc_emacs_helper.cc src/unix/emacs/mozc_emacs_hel
      switch (command.input().type()) {
        case commands::Input::CREATE_SESSION:
          session_id = client_pool.CreateClient();
-+#ifdef GOOGLE_JAPANESE_INPUT_BUILD
++#ifdef _WIN32
 +        {
 +          std::shared_ptr<mozc::client::Client> client =
 +            client_pool.GetClient(session_id);
@@ -33,7 +33,7 @@ diff -urN src.orig/unix/emacs/mozc_emacs_helper.cc src/unix/emacs/mozc_emacs_hel
 +            ErrorExit(mozc::emacs::kErrSessionError, "Send IME-On key failed");
 +          }
 +        }
-+#endif
++#endif  // _WIN32
          break;
        case commands::Input::DELETE_SESSION:
          client_pool.DeleteClient(session_id);
